@@ -1,0 +1,1156 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>aigeanpy package &#8212; aigeanpy-Working-Group-11 1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="aigeanpy-package">
+<h1>aigeanpy package<a class="headerlink" href="#aigeanpy-package" title="Permalink to this heading">¶</a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading">¶</a></h2>
+</section>
+<section id="module-aigeanpy.analysis">
+<span id="aigeanpy-analysis-module"></span><h2>aigeanpy.analysis module<a class="headerlink" href="#module-aigeanpy.analysis" title="Permalink to this heading">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="aigeanpy.analysis.kmeans">
+<span class="sig-prename descclassname"><span class="pre">aigeanpy.analysis.</span></span><span class="sig-name descname"><span class="pre">kmeans</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">Path</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_iterations</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="headerlink" href="#aigeanpy.analysis.kmeans" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calls the cluster function from the numpy version of clustering and returns a list with the measurement indices that belong to each group</p>
+<section id="parameters">
+<h3>Parameters:<a class="headerlink" href="#parameters" title="Permalink to this heading">¶</a></h3>
+<p>file: directory path of file’s location or name of file
+k: number of clusters
+max_iterations: maximum iterations to run the above steps over</p>
+</section>
+<section id="return">
+<h3>Return:<a class="headerlink" href="#return" title="Permalink to this heading">¶</a></h3>
+<dl class="simple">
+<dt>list</dt><dd><p>the cluster that each data point belongs to</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+</section>
+<section id="module-aigeanpy.clustering">
+<span id="aigeanpy-clustering-module"></span><h2>aigeanpy.clustering module<a class="headerlink" href="#module-aigeanpy.clustering" title="Permalink to this heading">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="aigeanpy.clustering.cluster">
+<span class="sig-prename descclassname"><span class="pre">aigeanpy.clustering.</span></span><span class="sig-name descname"><span class="pre">cluster</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">points</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_iterations</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aigeanpy.clustering.cluster" title="Permalink to this definition">¶</a></dt>
+<dd><p>Each cluster will contain points that are close to each other, and far from the other clusters.
+Prints the centre of the cluster, number of points within the cluster, and the individual points</p>
+<section id="id1">
+<h3>Parameters:<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h3>
+<p>points: list of data points
+k: number of clusters (set as 3 by default)
+max_iterations: maximum iterations to run the above steps over (set as 10 by default)</p>
+</section>
+<section id="id2">
+<h3>Return:<a class="headerlink" href="#id2" title="Permalink to this heading">¶</a></h3>
+<dl class="simple">
+<dt>array</dt><dd><p>Centre of k clusters</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="aigeanpy.clustering.interface">
+<span class="sig-prename descclassname"><span class="pre">aigeanpy.clustering.</span></span><span class="sig-name descname"><span class="pre">interface</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#aigeanpy.clustering.interface" title="Permalink to this definition">¶</a></dt>
+<dd><p>Command-line interface so that a user can call it by specifying a file and, optionally, a number of iterations</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="aigeanpy.clustering.read_data">
+<span class="sig-prename descclassname"><span class="pre">aigeanpy.clustering.</span></span><span class="sig-name descname"><span class="pre">read_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aigeanpy.clustering.read_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Extracts data from a specified file</p>
+<section id="id3">
+<h3>Parameters:<a class="headerlink" href="#id3" title="Permalink to this heading">¶</a></h3>
+<p>file_name: name of file to extract data from</p>
+</section>
+<section id="id4">
+<h3>Return:<a class="headerlink" href="#id4" title="Permalink to this heading">¶</a></h3>
+<dl class="simple">
+<dt>array</dt><dd><p>data points from the file</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+</section>
+<section id="module-aigeanpy.clustering_numpy">
+<span id="aigeanpy-clustering-numpy-module"></span><h2>aigeanpy.clustering_numpy module<a class="headerlink" href="#module-aigeanpy.clustering_numpy" title="Permalink to this heading">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="aigeanpy.clustering_numpy.cluster">
+<span class="sig-prename descclassname"><span class="pre">aigeanpy.clustering_numpy.</span></span><span class="sig-name descname"><span class="pre">cluster</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">points</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_iterations</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aigeanpy.clustering_numpy.cluster" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calls the “indices” function which contains the indices of the cluster that each data point belongs to.</p>
+<section id="id5">
+<h3>Parameters:<a class="headerlink" href="#id5" title="Permalink to this heading">¶</a></h3>
+<p>points: list of data points
+k: number of clusters (set as 3 by default)
+max_iterations: maximum iterations to run the above steps over (set as 10 by default)</p>
+</section>
+<section id="id6">
+<h3>Return:<a class="headerlink" href="#id6" title="Permalink to this heading">¶</a></h3>
+<dl class="simple">
+<dt>array</dt><dd><p>Centre of k clusters</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="aigeanpy.clustering_numpy.indices">
+<span class="sig-prename descclassname"><span class="pre">aigeanpy.clustering_numpy.</span></span><span class="sig-name descname"><span class="pre">indices</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">points</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_iterations</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aigeanpy.clustering_numpy.indices" title="Permalink to this definition">¶</a></dt>
+<dd><p>Assign each data point to a cluster by computing its distance from all cluster centres, and assign it to the nearest centre.
+Update the centre of each cluster by setting it to the average of all points assigned to the cluster.
+Each cluster will contain points that are close to each other, and far from the other clusters.</p>
+<section id="id7">
+<h3>Parameters:<a class="headerlink" href="#id7" title="Permalink to this heading">¶</a></h3>
+<p>points: list of data points
+k: number of clusters (set as 3 by default)
+max_iterations: maximum iterations to run the above steps over (set as 10 by default)</p>
+</section>
+<section id="id8">
+<h3>Return:<a class="headerlink" href="#id8" title="Permalink to this heading">¶</a></h3>
+<dl class="simple">
+<dt>list of int</dt><dd><p>The indices of the cluster that each data point belongs to</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="aigeanpy.clustering_numpy.interface">
+<span class="sig-prename descclassname"><span class="pre">aigeanpy.clustering_numpy.</span></span><span class="sig-name descname"><span class="pre">interface</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#aigeanpy.clustering_numpy.interface" title="Permalink to this definition">¶</a></dt>
+<dd><p>Command-line interface so that a user can call it by specifying a file and, optionally, a number of iterations</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="aigeanpy.clustering_numpy.read_data">
+<span class="sig-prename descclassname"><span class="pre">aigeanpy.clustering_numpy.</span></span><span class="sig-name descname"><span class="pre">read_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aigeanpy.clustering_numpy.read_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Extracts data from a specified file using numpy structure</p>
+<section id="id9">
+<h3>Parameters:<a class="headerlink" href="#id9" title="Permalink to this heading">¶</a></h3>
+<p>file_name: name of file to extract data from</p>
+</section>
+<section id="id10">
+<h3>Return:<a class="headerlink" href="#id10" title="Permalink to this heading">¶</a></h3>
+<dl class="simple">
+<dt>array</dt><dd><p>data points from the file</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+</section>
+<section id="module-aigeanpy.command">
+<span id="aigeanpy-command-module"></span><h2>aigeanpy.command module<a class="headerlink" href="#module-aigeanpy.command" title="Permalink to this heading">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="aigeanpy.command.aigean_metadata_process">
+<span class="sig-prename descclassname"><span class="pre">aigeanpy.command.</span></span><span class="sig-name descname"><span class="pre">aigean_metadata_process</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#aigeanpy.command.aigean_metadata_process" title="Permalink to this definition">¶</a></dt>
+<dd><p>Show the metadata information in specified local file name</p>
+<section id="input-in-command-line">
+<h3>Input in command line<a class="headerlink" href="#input-in-command-line" title="Permalink to this heading">¶</a></h3>
+<dl class="simple">
+<dt>&lt;filename_i&gt; [&lt;filename_j&gt; …]: str or str str …</dt><dd><p>Can input a file or list of them</p>
+</dd>
+</dl>
+</section>
+<section id="output">
+<h3>Output<a class="headerlink" href="#output" title="Permalink to this heading">¶</a></h3>
+<dl>
+<dt>On command line interface</dt><dd><p>Value available in the metadata (like archive, observatory, instrument, etc)</p>
+<p>If there are several files, the filename will be added before each values</p>
+<p>Files failed while being processed will be outputed in the end</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="aigeanpy.command.aigean_mosaic_process">
+<span class="sig-prename descclassname"><span class="pre">aigeanpy.command.</span></span><span class="sig-name descname"><span class="pre">aigean_mosaic_process</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#aigeanpy.command.aigean_mosaic_process" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accept two or more filenames and make a mosaic form figure</p>
+<section id="id11">
+<h3>Input in command line<a class="headerlink" href="#id11" title="Permalink to this heading">¶</a></h3>
+<dl class="simple">
+<dt>–resolution &lt;number&gt;<span class="classifier">int</span></dt><dd><p>Enter a non-0 natural number as the resolution of the image</p>
+</dd>
+<dt>&lt;filename_i&gt; [&lt;filename_j&gt; …]: str or str str …</dt><dd><p>Can input a file or list of them</p>
+</dd>
+<dt>Raises:</dt><dd><dl class="simple">
+<dt>TypeError</dt><dd><p>The internet is wrong, Need internet to check if the file with the filename is inside the web: <a class="reference external" href="http://dokku-app.dokku.arc.ucl.ac.uk">http://dokku-app.dokku.arc.ucl.ac.uk</a></p>
+</dd>
+<dt>TypeError</dt><dd><p>The filename (‘filenames’) is wrong</p>
+</dd>
+<dt>Exception</dt><dd><p>The file number is: ‘ + str(len(arguments.filename_list)) +’ which is less than 2(min numbers)</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+<section id="id12">
+<h3>Output<a class="headerlink" href="#id12" title="Permalink to this heading">¶</a></h3>
+<dl class="simple">
+<dt>On command line interface</dt><dd><p>save_name for png figure in str</p>
+</dd>
+</dl>
+<p>png type file will be saved in current folder for the mosaiced figure with ordered resolution</p>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="aigeanpy.command.aigean_today_process">
+<span class="sig-prename descclassname"><span class="pre">aigeanpy.command.</span></span><span class="sig-name descname"><span class="pre">aigean_today_process</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#aigeanpy.command.aigean_today_process" title="Permalink to this definition">¶</a></dt>
+<dd><p>Command line function :Download today newest instrument data and generate png figure. If there has flag, save the png figure.</p>
+<section id="id13">
+<h3>Input in command line<a class="headerlink" href="#id13" title="Permalink to this heading">¶</a></h3>
+<dl class="simple">
+<dt>–instrument (or use -i) &lt;instrument&gt;: str</dt><dd><p>–instrument is a flag (or use -i), then add a str type name(One of the four instrument names (lir, manannan, fand or ecne))</p>
+</dd>
+<dt>–saveplot (or use -s)</dt><dd><p>–saveplot is a flag (or use -s), once use it, png figure will be saved.</p>
+</dd>
+</dl>
+</section>
+<section id="id14">
+<h3>Output<a class="headerlink" href="#id14" title="Permalink to this heading">¶</a></h3>
+<p>The data file in current folder</p>
+<p>Show the png figure in a window</p>
+<p>If has –saveplot (or -s), the png figrue will be saved in current folder</p>
+</section>
+<section id="raises">
+<h3>Raises<a class="headerlink" href="#raises" title="Permalink to this heading">¶</a></h3>
+<dl class="simple">
+<dt>TypeError</dt><dd><p>The instrument (arguments.instrument) do not has data in today</p>
+</dd>
+<dt>Exception</dt><dd><p>The instrument name is wrong, use one of the four instrument names (lir, manannan, fand or ecne)</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="aigeanpy.command.fail_file_print">
+<span class="sig-prename descclassname"><span class="pre">aigeanpy.command.</span></span><span class="sig-name descname"><span class="pre">fail_file_print</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fail_file_list</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aigeanpy.command.fail_file_print" title="Permalink to this definition">¶</a></dt>
+<dd><p>Print the file which is failed to open</p>
+<section id="id15">
+<h3>Parameters<a class="headerlink" href="#id15" title="Permalink to this heading">¶</a></h3>
+<blockquote>
+<div><dl class="simple">
+<dt>fail_file_list (list): </dt><dd><p>The str list of failed file names</p>
+</dd>
+</dl>
+</div></blockquote>
+</section>
+<section id="id16">
+<h3>Output<a class="headerlink" href="#id16" title="Permalink to this heading">¶</a></h3>
+<p>Print all the failed file names</p>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="aigeanpy.command.print_meta">
+<span class="sig-prename descclassname"><span class="pre">aigeanpy.command.</span></span><span class="sig-name descname"><span class="pre">print_meta</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">meta</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flag_filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'</span> <span class="pre">:'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aigeanpy.command.print_meta" title="Permalink to this definition">¶</a></dt>
+<dd><p>Print the meta data</p>
+<section id="id17">
+<h3>Parameters<a class="headerlink" href="#id17" title="Permalink to this heading">¶</a></h3>
+<blockquote>
+<div><dl class="simple">
+<dt>meta: dict</dt><dd><p>Meta data, including ‘instrument’,’observatory’,’resolution’,’time’,’date’,’xcoords’,’ycoords’, ‘archive’ message</p>
+</dd>
+<dt>flag_filename: int(0 or 1)</dt><dd><p>When it is 0, filename do not be printed; When it is 1, filename will be printed</p>
+</dd>
+<dt>filename: (str, optional)</dt><dd><p>File name. Defaults to ‘ :’.</p>
+</dd>
+</dl>
+</div></blockquote>
+</section>
+<section id="id18">
+<h3>Output<a class="headerlink" href="#id18" title="Permalink to this heading">¶</a></h3>
+<p>Print the metadata(‘instrument’,’observatory’,’resolution’,’time’,’date’,’xcoords’,’ycoords’, ‘archive’ message)</p>
+</section>
+</dd></dl>
+
+</section>
+<section id="module-aigeanpy.net">
+<span id="aigeanpy-net-module"></span><h2>aigeanpy.net module<a class="headerlink" href="#module-aigeanpy.net" title="Permalink to this heading">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="aigeanpy.net.download_isa">
+<span class="sig-prename descclassname"><span class="pre">aigeanpy.net.</span></span><span class="sig-name descname"><span class="pre">download_isa</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aigeanpy.net.download_isa" title="Permalink to this definition">¶</a></dt>
+<dd><p>Download the file according to the file name and save path and save it to the specified location</p>
+<section id="id19">
+<h3>Parameters<a class="headerlink" href="#id19" title="Permalink to this heading">¶</a></h3>
+<dl class="simple">
+<dt>filename<span class="classifier">str</span></dt><dd><p>The name of the file to be downloaded</p>
+</dd>
+<dt>save_dir<span class="classifier">str, optional</span></dt><dd><p>file save path, by default ‘./’</p>
+</dd>
+</dl>
+</section>
+<section id="id20">
+<h3>Raises<a class="headerlink" href="#id20" title="Permalink to this heading">¶</a></h3>
+<dl class="simple">
+<dt>ValueError</dt><dd><p>File is non Aigean file</p>
+</dd>
+<dt>ValueError</dt><dd><p>File not exists on the network</p>
+</dd>
+</dl>
+</section>
+<section id="examples">
+<h3>Examples<a class="headerlink" href="#examples" title="Permalink to this heading">¶</a></h3>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">net</span> <span class="kn">import</span> <span class="n">download_isa</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">download_isa</span><span class="p">(</span><span class="s1">&#39;aigean_fan_20221208_170852.zip&#39;</span><span class="p">,</span> <span class="n">save_dir</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">os</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="s1">&#39;aigean_fan_20221208_170852.zip&#39;</span><span class="p">)</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="aigeanpy.net.judge_legal_date">
+<span class="sig-prename descclassname"><span class="pre">aigeanpy.net.</span></span><span class="sig-name descname"><span class="pre">judge_legal_date</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">date</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aigeanpy.net.judge_legal_date" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if the date format is correct</p>
+<section id="id21">
+<h3>Parameters<a class="headerlink" href="#id21" title="Permalink to this heading">¶</a></h3>
+<dl class="simple">
+<dt>date<span class="classifier">str</span></dt><dd><p>date entered</p>
+</dd>
+</dl>
+</section>
+<section id="returns">
+<h3>Returns<a class="headerlink" href="#returns" title="Permalink to this heading">¶</a></h3>
+<dl class="simple">
+<dt>bool</dt><dd><p>Returns the bool value of whether the date format is correct</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="aigeanpy.net.query_isa">
+<span class="sig-prename descclassname"><span class="pre">aigeanpy.net.</span></span><span class="sig-name descname"><span class="pre">query_isa</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">start_date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'2023-01-18'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stop_date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'2023-01-18'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">instrument</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aigeanpy.net.query_isa" title="Permalink to this definition">¶</a></dt>
+<dd><p>Query Irish Space Agency data by given start time, end time and date</p>
+<section id="id22">
+<h3>Parameters<a class="headerlink" href="#id22" title="Permalink to this heading">¶</a></h3>
+<dl class="simple">
+<dt>start_date<span class="classifier">str, optional</span></dt><dd><p>The date the query started, by default str(Time_now)</p>
+</dd>
+<dt>stop_date<span class="classifier">str, optional</span></dt><dd><p>The date the query ended, by default str(Time_now)</p>
+</dd>
+<dt>instrument<span class="classifier">str, optional</span></dt><dd><p>Query device, by default ‘’</p>
+</dd>
+</dl>
+</section>
+<section id="id23">
+<h3>Returns<a class="headerlink" href="#id23" title="Permalink to this heading">¶</a></h3>
+<dl class="simple">
+<dt>list</dt><dd><p>return query information</p>
+</dd>
+</dl>
+</section>
+<section id="id24">
+<h3>Raises<a class="headerlink" href="#id24" title="Permalink to this heading">¶</a></h3>
+<dl class="simple">
+<dt>ValueError</dt><dd><p>Start date has a wrong date formats</p>
+</dd>
+<dt>ValueError</dt><dd><p>Stop date has a wrong date formats</p>
+</dd>
+<dt>ValueError</dt><dd><p>The difference between the end time and the start time is greater than 3 days</p>
+</dd>
+<dt>ValueError</dt><dd><p>Start time is greater than end time</p>
+</dd>
+<dt>ConnectionError</dt><dd><p>No network connection</p>
+</dd>
+</dl>
+</section>
+<section id="id25">
+<h3>Examples<a class="headerlink" href="#id25" title="Permalink to this heading">¶</a></h3>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">net</span> <span class="kn">import</span> <span class="n">query_isa</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">text</span> <span class="o">=</span> <span class="n">query_isa</span><span class="p">(</span><span class="s1">&#39;2022-12-05&#39;</span><span class="p">,</span> <span class="s1">&#39;2022-12-05&#39;</span><span class="p">,</span> <span class="s1">&#39;Fand&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+<span class="go">[{&#39;date&#39;: &#39;2022-12-05&#39;, &#39;filename&#39;: &#39;aigean_fan_20221205_191610.zip&#39;, &#39;instrument&#39;: &#39;fand&#39;, &#39;resolution&#39;: 5, &#39;time&#39;: &#39;19:16:10&#39;, &#39;xcoords&#39;: [75.0, 300.0], &#39;ycoords&#39;: [450.0, 500.0]}, {&#39;date&#39;: &#39;2022-12-05&#39;, &#39;filename&#39;: &#39;aigean_fan_20221205_192210.zip&#39;, &#39;instrument&#39;: &#39;fand&#39;, &#39;resolution&#39;: 5, &#39;time&#39;: &#39;19:22:10&#39;, &#39;xcoords&#39;: [300.0, 525.0], &#39;ycoords&#39;: [50.0, 100.0]}, {&#39;date&#39;: &#39;2022-12-05&#39;, &#39;filename&#39;: &#39;aigean_fan_20221205_192810.zip&#39;, &#39;instrument&#39;: &#39;fand&#39;, &#39;resolution&#39;: 5, &#39;time&#39;: &#39;19:28:10&#39;, &#39;xcoords&#39;: [450.0, 675.0], &#39;ycoords&#39;: [100.0, 150.0]}, {&#39;date&#39;: &#39;2022-12-05&#39;, &#39;filename&#39;: &#39;aigean_fan_20221205_193510.zip&#39;, &#39;instrument&#39;: &#39;fand&#39;, &#39;resolution&#39;: 5, &#39;time&#39;: &#39;19:35:10&#39;, &#39;xcoords&#39;: [600.0, 825.0], &#39;ycoords&#39;: [350.0, 400.0]}, {&#39;date&#39;: &#39;2022-12-05&#39;, &#39;filename&#39;: &#39;aigean_fan_20221205_194010.zip&#39;, &#39;instrument&#39;: &#39;fand&#39;, &#39;resolution&#39;: 5, &#39;time&#39;: &#39;19:40:10&#39;, &#39;xcoords&#39;: [675.0, 900.0], &#39;ycoords&#39;: [100.0, 150.0]}, {&#39;date&#39;: &#39;2022-12-05&#39;, &#39;filename&#39;: &#39;aigean_fan_20221205_194710.zip&#39;, &#39;instrument&#39;: &#39;fand&#39;, &#39;resolution&#39;: 5, &#39;time&#39;: &#39;19:47:10&#39;, &#39;xcoords&#39;: [900.0, 1125.0], &#39;ycoords&#39;: [400.0, 450.0]}, {&#39;date&#39;: &#39;2022-12-05&#39;, &#39;filename&#39;: &#39;aigean_fan_20221205_195310.zip&#39;, &#39;instrument&#39;: &#39;fand&#39;, &#39;resolution&#39;: 5, &#39;time&#39;: &#39;19:53:10&#39;, &#39;xcoords&#39;: [975.0, 1200.0], &#39;ycoords&#39;: [400.0, 450.0]}, {&#39;date&#39;: &#39;2022-12-05&#39;, &#39;filename&#39;: &#39;aigean_fan_20221205_195810.zip&#39;, &#39;instrument&#39;: &#39;fand&#39;, &#39;resolution&#39;: 5, &#39;time&#39;: &#39;19:58:10&#39;, &#39;xcoords&#39;: [1050.0, 1275.0], &#39;ycoords&#39;: [250.0, 300.0]}, {&#39;date&#39;: &#39;2022-12-05&#39;, &#39;filename&#39;: &#39;aigean_fan_20221205_200510.zip&#39;, &#39;instrument&#39;: &#39;fand&#39;, &#39;resolution&#39;: 5, &#39;time&#39;: &#39;20:05:10&#39;, &#39;xcoords&#39;: [1125.0, 1350.0], &#39;ycoords&#39;: [150.0, 200.0]}]</span>
+</pre></div>
+</div>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="aigeanpy.net.time_sub">
+<span class="sig-prename descclassname"><span class="pre">aigeanpy.net.</span></span><span class="sig-name descname"><span class="pre">time_sub</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">start_time</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stop_time</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aigeanpy.net.time_sub" title="Permalink to this definition">¶</a></dt>
+<dd><p>date subtraction</p>
+<section id="id26">
+<h3>Parameters<a class="headerlink" href="#id26" title="Permalink to this heading">¶</a></h3>
+<dl class="simple">
+<dt>start_time<span class="classifier">str</span></dt><dd><p>Entered start time</p>
+</dd>
+<dt>stop_time<span class="classifier">str</span></dt><dd><p>Entered stop time</p>
+</dd>
+</dl>
+</section>
+<section id="id27">
+<h3>Returns<a class="headerlink" href="#id27" title="Permalink to this heading">¶</a></h3>
+<dl class="simple">
+<dt>int</dt><dd><p>Returns the difference between two dates</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+</section>
+<section id="module-aigeanpy.satmap">
+<span id="aigeanpy-satmap-module"></span><h2>aigeanpy.satmap module<a class="headerlink" href="#module-aigeanpy.satmap" title="Permalink to this heading">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="aigeanpy.satmap.cal_centre">
+<span class="sig-prename descclassname"><span class="pre">aigeanpy.satmap.</span></span><span class="sig-name descname"><span class="pre">cal_centre</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">meta</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aigeanpy.satmap.cal_centre" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate the center point of the image</p>
+<section id="id28">
+<h3>Parameters<a class="headerlink" href="#id28" title="Permalink to this heading">¶</a></h3>
+<dl class="simple">
+<dt>meta<span class="classifier">dict</span></dt><dd><p>input meta data</p>
+</dd>
+</dl>
+</section>
+<section id="id29">
+<h3>Returns<a class="headerlink" href="#id29" title="Permalink to this heading">¶</a></h3>
+<dl class="simple">
+<dt>turple</dt><dd><p>The coordinates of the center point of the image</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="aigeanpy.satmap.cal_fov">
+<span class="sig-prename descclassname"><span class="pre">aigeanpy.satmap.</span></span><span class="sig-name descname"><span class="pre">cal_fov</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">meta</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aigeanpy.satmap.cal_fov" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate the field of view of an image</p>
+<section id="id30">
+<h3>Parameters<a class="headerlink" href="#id30" title="Permalink to this heading">¶</a></h3>
+<dl class="simple">
+<dt>meta<span class="classifier">dict</span></dt><dd><p>input meta data</p>
+</dd>
+</dl>
+</section>
+<section id="id31">
+<h3>Returns<a class="headerlink" href="#id31" title="Permalink to this heading">¶</a></h3>
+<dl class="simple">
+<dt>turple</dt><dd><p>field of view of an image</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="aigeanpy.satmap.earth_to_pixel">
+<span class="sig-prename descclassname"><span class="pre">aigeanpy.satmap.</span></span><span class="sig-name descname"><span class="pre">earth_to_pixel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">meta</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">earth_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">earth_y</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aigeanpy.satmap.earth_to_pixel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Conversion from earth coordinates to pixel coordinates</p>
+<section id="id32">
+<h3>Parameters<a class="headerlink" href="#id32" title="Permalink to this heading">¶</a></h3>
+<dl class="simple">
+<dt>meta<span class="classifier">dict</span></dt><dd><p>Meta data, including ‘instrument’,’observatory’,’resolution’,’time’,’date’,’xcoords’,’ycoords’, ‘archive’ message</p>
+</dd>
+<dt>earth_x<span class="classifier">int</span></dt><dd><p>input earth x-coordinate</p>
+</dd>
+<dt>earth_y<span class="classifier">int</span></dt><dd><p>input earth y-coordinate</p>
+</dd>
+</dl>
+</section>
+<section id="id33">
+<h3>Returns<a class="headerlink" href="#id33" title="Permalink to this heading">¶</a></h3>
+<dl class="simple">
+<dt>turple</dt><dd><p>returns an pixel coordinate pair</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="aigeanpy.satmap.get_satmap">
+<span class="sig-prename descclassname"><span class="pre">aigeanpy.satmap.</span></span><span class="sig-name descname"><span class="pre">get_satmap</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aigeanpy.satmap.get_satmap" title="Permalink to this definition">¶</a></dt>
+<dd><p>read different files</p>
+<section id="id34">
+<h3>Parameters<a class="headerlink" href="#id34" title="Permalink to this heading">¶</a></h3>
+<dl class="simple">
+<dt>filename<span class="classifier">str</span></dt><dd><p>input file name</p>
+</dd>
+</dl>
+</section>
+<section id="id35">
+<h3>Returns<a class="headerlink" href="#id35" title="Permalink to this heading">¶</a></h3>
+<dl class="simple">
+<dt>class</dt><dd><p>Return satmap class, including meta, data, shape, fov, centre</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="aigeanpy.satmap.handle_edge">
+<span class="sig-prename descclassname"><span class="pre">aigeanpy.satmap.</span></span><span class="sig-name descname"><span class="pre">handle_edge</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">start</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shape</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aigeanpy.satmap.handle_edge" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="aigeanpy.satmap.isoverlap">
+<span class="sig-prename descclassname"><span class="pre">aigeanpy.satmap.</span></span><span class="sig-name descname"><span class="pre">isoverlap</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">meta1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">meta2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aigeanpy.satmap.isoverlap" title="Permalink to this definition">¶</a></dt>
+<dd><p>Determine whether two images overlap</p>
+<section id="id36">
+<h3>Parameters<a class="headerlink" href="#id36" title="Permalink to this heading">¶</a></h3>
+<dl class="simple">
+<dt>meta1<span class="classifier">dict</span></dt><dd><p>Meta data in a file</p>
+</dd>
+<dt>meta2<span class="classifier">dict</span></dt><dd><p>Meta data in another file</p>
+</dd>
+</dl>
+</section>
+<section id="id37">
+<h3>Returns<a class="headerlink" href="#id37" title="Permalink to this heading">¶</a></h3>
+<dl class="simple">
+<dt>bool</dt><dd><p>Returns a bool value to determine whether it overlaps</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="aigeanpy.satmap.pixel_to_earth">
+<span class="sig-prename descclassname"><span class="pre">aigeanpy.satmap.</span></span><span class="sig-name descname"><span class="pre">pixel_to_earth</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">meta</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pixel_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pixel_y</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aigeanpy.satmap.pixel_to_earth" title="Permalink to this definition">¶</a></dt>
+<dd><p>Conversion from pixel coordinates to earth coordinates</p>
+<section id="id38">
+<h3>Parameters<a class="headerlink" href="#id38" title="Permalink to this heading">¶</a></h3>
+<dl class="simple">
+<dt>meta<span class="classifier">dict</span></dt><dd><p>Meta data, including ‘instrument’,’observatory’,’resolution’,’time’,’date’,’xcoords’,’ycoords’, ‘archive’ message</p>
+</dd>
+<dt>pixel_x<span class="classifier">int</span></dt><dd><p>input pixel x-coordinate</p>
+</dd>
+<dt>pixel_y<span class="classifier">int</span></dt><dd><p>input pixel y-coordinate</p>
+</dd>
+</dl>
+</section>
+<section id="id39">
+<h3>Returns<a class="headerlink" href="#id39" title="Permalink to this heading">¶</a></h3>
+<dl class="simple">
+<dt>turple</dt><dd><p>returns an earth coordinate pair</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="aigeanpy.satmap.process_meta">
+<span class="sig-prename descclassname"><span class="pre">aigeanpy.satmap.</span></span><span class="sig-name descname"><span class="pre">process_meta</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">meta_file</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aigeanpy.satmap.process_meta" title="Permalink to this definition">¶</a></dt>
+<dd><p>read meta from different files</p>
+<section id="id40">
+<h3>Parameters<a class="headerlink" href="#id40" title="Permalink to this heading">¶</a></h3>
+<dl class="simple">
+<dt>meta_file<span class="classifier">dict</span></dt><dd><p>Dictionary file containing meta data</p>
+</dd>
+</dl>
+</section>
+<section id="id41">
+<h3>Returns<a class="headerlink" href="#id41" title="Permalink to this heading">¶</a></h3>
+<dl class="simple">
+<dt>dict</dt><dd><p>Return meta dictionary data</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="aigeanpy.satmap.read_asdf">
+<span class="sig-prename descclassname"><span class="pre">aigeanpy.satmap.</span></span><span class="sig-name descname"><span class="pre">read_asdf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aigeanpy.satmap.read_asdf" title="Permalink to this definition">¶</a></dt>
+<dd><p>read asdf file</p>
+<section id="id42">
+<h3>Parameters<a class="headerlink" href="#id42" title="Permalink to this heading">¶</a></h3>
+<dl class="simple">
+<dt>filename<span class="classifier">str</span></dt><dd><p>file name</p>
+</dd>
+</dl>
+</section>
+<section id="id43">
+<h3>Returns<a class="headerlink" href="#id43" title="Permalink to this heading">¶</a></h3>
+<dl class="simple">
+<dt>dict, np.array </dt><dd><p>Returns the read image data and meta dictionary</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="aigeanpy.satmap.read_hdf5">
+<span class="sig-prename descclassname"><span class="pre">aigeanpy.satmap.</span></span><span class="sig-name descname"><span class="pre">read_hdf5</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aigeanpy.satmap.read_hdf5" title="Permalink to this definition">¶</a></dt>
+<dd><p>read hdf5 file</p>
+<section id="id44">
+<h3>Parameters<a class="headerlink" href="#id44" title="Permalink to this heading">¶</a></h3>
+<dl class="simple">
+<dt>filename<span class="classifier">str</span></dt><dd><p>file name</p>
+</dd>
+</dl>
+</section>
+<section id="id45">
+<h3>Returns<a class="headerlink" href="#id45" title="Permalink to this heading">¶</a></h3>
+<dl class="simple">
+<dt>dict, np.array </dt><dd><p>Returns the read image data and meta dictionary</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="aigeanpy.satmap.read_zip">
+<span class="sig-prename descclassname"><span class="pre">aigeanpy.satmap.</span></span><span class="sig-name descname"><span class="pre">read_zip</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aigeanpy.satmap.read_zip" title="Permalink to this definition">¶</a></dt>
+<dd><p>read zip file</p>
+<section id="id46">
+<h3>Parameters<a class="headerlink" href="#id46" title="Permalink to this heading">¶</a></h3>
+<dl class="simple">
+<dt>filename<span class="classifier">str</span></dt><dd><p>file name</p>
+</dd>
+</dl>
+</section>
+<section id="id47">
+<h3>Returns<a class="headerlink" href="#id47" title="Permalink to this heading">¶</a></h3>
+<dl class="simple">
+<dt>dict, np.array </dt><dd><p>Returns the read image data and meta dictionary</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="aigeanpy.satmap.satmap">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">aigeanpy.satmap.</span></span><span class="sig-name descname"><span class="pre">satmap</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">meta</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shape</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fov</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">centre</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aigeanpy.satmap.satmap" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="aigeanpy.satmap.satmap.mosaic">
+<span class="sig-name descname"><span class="pre">mosaic</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">another_satmap</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">resolution</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">padding</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aigeanpy.satmap.satmap.mosaic" title="Permalink to this definition">¶</a></dt>
+<dd><p>mosaic operation on two classes</p>
+<section id="id48">
+<h3>Parameters<a class="headerlink" href="#id48" title="Permalink to this heading">¶</a></h3>
+<dl class="simple">
+<dt>another_satmap<span class="classifier">class</span></dt><dd><p>another class of input</p>
+</dd>
+<dt>resolution<span class="classifier">int, optional</span></dt><dd><p>image resolution, by default ‘’</p>
+</dd>
+<dt>padding<span class="classifier">bool, optional</span></dt><dd><p>Whether to perform padding operation, by default True</p>
+</dd>
+</dl>
+</section>
+<section id="id49">
+<h3>Returns<a class="headerlink" href="#id49" title="Permalink to this heading">¶</a></h3>
+<dl class="simple">
+<dt>class</dt><dd><p>Returns the class that completes the masaic operation</p>
+</dd>
+</dl>
+</section>
+<section id="id50">
+<h3>Examples<a class="headerlink" href="#id50" title="Permalink to this heading">¶</a></h3>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">satmap</span> <span class="kn">import</span> <span class="n">get_satmap</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">lir_map1</span> <span class="o">=</span> <span class="n">get_satmap</span><span class="p">(</span><span class="s1">&#39;aigean_lir_20221205_191610.asdf&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">lir_map2</span> <span class="o">=</span> <span class="n">get_satmap</span><span class="p">(</span><span class="s1">&#39;aigean_man_20221205_194510.hdf5&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">satmap</span> <span class="kn">import</span> <span class="n">satmap</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">SatMap</span> <span class="o">=</span> <span class="n">satmap</span><span class="o">.</span><span class="n">mosaic</span><span class="p">(</span><span class="n">lir_map1</span><span class="p">,</span> <span class="n">lir_map2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">SatMap</span><span class="o">.</span><span class="n">meta</span>                     
+<span class="go">{&#39;instrument&#39;: &#39;Lir&#39;, &#39;observatory&#39;: &#39;Aigean&#39;, &#39;resolution&#39;: 15, &#39;time&#39;: &#39;19:16:10&#39;, &#39;date&#39;: &#39;2022-12-05&#39;, &#39;xcoords&#39;: [500, 1200], &#39;ycoords&#39;: [200, 500], &#39;archive&#39;: &#39;ISA&#39;}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">SatMap</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span> 
+<span class="go">563.4006734006733</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">SatMap</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="mi">9</span><span class="p">,</span><span class="mi">15</span><span class="p">]</span> 
+<span class="go">618.5530303030301</span>
+</pre></div>
+</div>
+</section>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="aigeanpy.satmap.satmap.visualise">
+<span class="sig-name descname"><span class="pre">visualise</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">save</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">savepath</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aigeanpy.satmap.satmap.visualise" title="Permalink to this definition">¶</a></dt>
+<dd><p>Visual operation</p>
+<section id="id51">
+<h3>Parameters<a class="headerlink" href="#id51" title="Permalink to this heading">¶</a></h3>
+<dl class="simple">
+<dt>save<span class="classifier">bool, optional</span></dt><dd><p>Whether to save the image, by default False</p>
+</dd>
+<dt>savepath<span class="classifier">str, optional</span></dt><dd><p>saved path, by default ‘./’</p>
+</dd>
+</dl>
+</section>
+<section id="id52">
+<h3>Examples<a class="headerlink" href="#id52" title="Permalink to this heading">¶</a></h3>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">satmap</span> <span class="kn">import</span> <span class="n">get_satmap</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">lir_map</span> <span class="o">=</span> <span class="n">get_satmap</span><span class="p">(</span><span class="s1">&#39;aigean_fan_20221205_191610.zip&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">satmap</span><span class="o">.</span><span class="n">visualise</span><span class="p">(</span><span class="n">lir_map</span><span class="p">,</span><span class="n">save</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">os</span> 
+<span class="gp">&gt;&gt;&gt; </span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="s1">&#39;Aigean_Fand_2022-12-05_19_16_10_extra.png&#39;</span><span class="p">)</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+</section>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-aigeanpy.test_clustering">
+<span id="aigeanpy-test-clustering-module"></span><h2>aigeanpy.test_clustering module<a class="headerlink" href="#module-aigeanpy.test_clustering" title="Permalink to this heading">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="aigeanpy.test_clustering.test_cluster_in_clustering">
+<span class="sig-prename descclassname"><span class="pre">aigeanpy.test_clustering.</span></span><span class="sig-name descname"><span class="pre">test_cluster_in_clustering</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#aigeanpy.test_clustering.test_cluster_in_clustering" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="aigeanpy.test_clustering.test_cluster_in_clustering_numpy">
+<span class="sig-prename descclassname"><span class="pre">aigeanpy.test_clustering.</span></span><span class="sig-name descname"><span class="pre">test_cluster_in_clustering_numpy</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#aigeanpy.test_clustering.test_cluster_in_clustering_numpy" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="aigeanpy.test_clustering.test_indices">
+<span class="sig-prename descclassname"><span class="pre">aigeanpy.test_clustering.</span></span><span class="sig-name descname"><span class="pre">test_indices</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#aigeanpy.test_clustering.test_indices" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="aigeanpy.test_clustering.test_k_type">
+<span class="sig-prename descclassname"><span class="pre">aigeanpy.test_clustering.</span></span><span class="sig-name descname"><span class="pre">test_k_type</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#aigeanpy.test_clustering.test_k_type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="aigeanpy.test_clustering.test_k_value">
+<span class="sig-prename descclassname"><span class="pre">aigeanpy.test_clustering.</span></span><span class="sig-name descname"><span class="pre">test_k_value</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#aigeanpy.test_clustering.test_k_value" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="aigeanpy.test_clustering.test_kmeans">
+<span class="sig-prename descclassname"><span class="pre">aigeanpy.test_clustering.</span></span><span class="sig-name descname"><span class="pre">test_kmeans</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#aigeanpy.test_clustering.test_kmeans" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="aigeanpy.test_clustering.test_max_interation_type">
+<span class="sig-prename descclassname"><span class="pre">aigeanpy.test_clustering.</span></span><span class="sig-name descname"><span class="pre">test_max_interation_type</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#aigeanpy.test_clustering.test_max_interation_type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="aigeanpy.test_clustering.test_max_interation_value">
+<span class="sig-prename descclassname"><span class="pre">aigeanpy.test_clustering.</span></span><span class="sig-name descname"><span class="pre">test_max_interation_value</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#aigeanpy.test_clustering.test_max_interation_value" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="aigeanpy.test_clustering.test_performance">
+<span class="sig-prename descclassname"><span class="pre">aigeanpy.test_clustering.</span></span><span class="sig-name descname"><span class="pre">test_performance</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#aigeanpy.test_clustering.test_performance" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="aigeanpy.test_clustering.test_points_type">
+<span class="sig-prename descclassname"><span class="pre">aigeanpy.test_clustering.</span></span><span class="sig-name descname"><span class="pre">test_points_type</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#aigeanpy.test_clustering.test_points_type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="aigeanpy.test_clustering.test_read_data_in_clustering">
+<span class="sig-prename descclassname"><span class="pre">aigeanpy.test_clustering.</span></span><span class="sig-name descname"><span class="pre">test_read_data_in_clustering</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#aigeanpy.test_clustering.test_read_data_in_clustering" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="aigeanpy.test_clustering.test_read_data_in_clustering_numpy">
+<span class="sig-prename descclassname"><span class="pre">aigeanpy.test_clustering.</span></span><span class="sig-name descname"><span class="pre">test_read_data_in_clustering_numpy</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#aigeanpy.test_clustering.test_read_data_in_clustering_numpy" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-aigeanpy.test_mock">
+<span id="aigeanpy-test-mock-module"></span><h2>aigeanpy.test_mock module<a class="headerlink" href="#module-aigeanpy.test_mock" title="Permalink to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="aigeanpy.test_mock.mocktest">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">aigeanpy.test_mock.</span></span><span class="sig-name descname"><span class="pre">mocktest</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">methodName</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'runTest'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aigeanpy.test_mock.mocktest" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">TestCase</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="aigeanpy.test_mock.mocktest.setUpClass">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">setUpClass</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#aigeanpy.test_mock.mocktest.setUpClass" title="Permalink to this definition">¶</a></dt>
+<dd><p>Hook method for setting up class fixture before running tests in the class.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="aigeanpy.test_mock.mocktest.tearDownClass">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">tearDownClass</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#aigeanpy.test_mock.mocktest.tearDownClass" title="Permalink to this definition">¶</a></dt>
+<dd><p>Hook method for deconstructing the class fixture after running all tests in the class.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="aigeanpy.test_mock.mocktest.test_add">
+<span class="sig-name descname"><span class="pre">test_add</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#aigeanpy.test_mock.mocktest.test_add" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="aigeanpy.test_mock.mocktest.test_asdf">
+<span class="sig-name descname"><span class="pre">test_asdf</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#aigeanpy.test_mock.mocktest.test_asdf" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="aigeanpy.test_mock.mocktest.test_cal_centre">
+<span class="sig-name descname"><span class="pre">test_cal_centre</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#aigeanpy.test_mock.mocktest.test_cal_centre" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="aigeanpy.test_mock.mocktest.test_cal_fov">
+<span class="sig-name descname"><span class="pre">test_cal_fov</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#aigeanpy.test_mock.mocktest.test_cal_fov" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="aigeanpy.test_mock.mocktest.test_earth_to_pixel">
+<span class="sig-name descname"><span class="pre">test_earth_to_pixel</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#aigeanpy.test_mock.mocktest.test_earth_to_pixel" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="aigeanpy.test_mock.mocktest.test_get_satmap">
+<span class="sig-name descname"><span class="pre">test_get_satmap</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#aigeanpy.test_mock.mocktest.test_get_satmap" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="aigeanpy.test_mock.mocktest.test_isoverlap">
+<span class="sig-name descname"><span class="pre">test_isoverlap</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#aigeanpy.test_mock.mocktest.test_isoverlap" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="aigeanpy.test_mock.mocktest.test_mosaic">
+<span class="sig-name descname"><span class="pre">test_mosaic</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#aigeanpy.test_mock.mocktest.test_mosaic" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="aigeanpy.test_mock.mocktest.test_pixel_to_earth">
+<span class="sig-name descname"><span class="pre">test_pixel_to_earth</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#aigeanpy.test_mock.mocktest.test_pixel_to_earth" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="aigeanpy.test_mock.mocktest.test_read_hdf5">
+<span class="sig-name descname"><span class="pre">test_read_hdf5</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#aigeanpy.test_mock.mocktest.test_read_hdf5" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="aigeanpy.test_mock.mocktest.test_sub">
+<span class="sig-name descname"><span class="pre">test_sub</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#aigeanpy.test_mock.mocktest.test_sub" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="aigeanpy.test_mock.mocktest.test_zip">
+<span class="sig-name descname"><span class="pre">test_zip</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#aigeanpy.test_mock.mocktest.test_zip" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-aigeanpy.test_net">
+<span id="aigeanpy-test-net-module"></span><h2>aigeanpy.test_net module<a class="headerlink" href="#module-aigeanpy.test_net" title="Permalink to this heading">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="aigeanpy.test_net.test_download_isa">
+<span class="sig-prename descclassname"><span class="pre">aigeanpy.test_net.</span></span><span class="sig-name descname"><span class="pre">test_download_isa</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#aigeanpy.test_net.test_download_isa" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="aigeanpy.test_net.test_filename">
+<span class="sig-prename descclassname"><span class="pre">aigeanpy.test_net.</span></span><span class="sig-name descname"><span class="pre">test_filename</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#aigeanpy.test_net.test_filename" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="aigeanpy.test_net.test_func">
+<span class="sig-prename descclassname"><span class="pre">aigeanpy.test_net.</span></span><span class="sig-name descname"><span class="pre">test_func</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#aigeanpy.test_net.test_func" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="aigeanpy.test_net.test_get_system_failure">
+<span class="sig-prename descclassname"><span class="pre">aigeanpy.test_net.</span></span><span class="sig-name descname"><span class="pre">test_get_system_failure</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#aigeanpy.test_net.test_get_system_failure" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="aigeanpy.test_net.test_judge_legal_date">
+<span class="sig-prename descclassname"><span class="pre">aigeanpy.test_net.</span></span><span class="sig-name descname"><span class="pre">test_judge_legal_date</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#aigeanpy.test_net.test_judge_legal_date" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="aigeanpy.test_net.test_query_isa">
+<span class="sig-prename descclassname"><span class="pre">aigeanpy.test_net.</span></span><span class="sig-name descname"><span class="pre">test_query_isa</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#aigeanpy.test_net.test_query_isa" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="aigeanpy.test_net.test_savedir">
+<span class="sig-prename descclassname"><span class="pre">aigeanpy.test_net.</span></span><span class="sig-name descname"><span class="pre">test_savedir</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#aigeanpy.test_net.test_savedir" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="aigeanpy.test_net.test_start_date_format">
+<span class="sig-prename descclassname"><span class="pre">aigeanpy.test_net.</span></span><span class="sig-name descname"><span class="pre">test_start_date_format</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#aigeanpy.test_net.test_start_date_format" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="aigeanpy.test_net.test_start_date_type">
+<span class="sig-prename descclassname"><span class="pre">aigeanpy.test_net.</span></span><span class="sig-name descname"><span class="pre">test_start_date_type</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#aigeanpy.test_net.test_start_date_type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="aigeanpy.test_net.test_stop_date_format">
+<span class="sig-prename descclassname"><span class="pre">aigeanpy.test_net.</span></span><span class="sig-name descname"><span class="pre">test_stop_date_format</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#aigeanpy.test_net.test_stop_date_format" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="aigeanpy.test_net.test_stop_date_type">
+<span class="sig-prename descclassname"><span class="pre">aigeanpy.test_net.</span></span><span class="sig-name descname"><span class="pre">test_stop_date_type</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#aigeanpy.test_net.test_stop_date_type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="aigeanpy.test_net.test_time_sub">
+<span class="sig-prename descclassname"><span class="pre">aigeanpy.test_net.</span></span><span class="sig-name descname"><span class="pre">test_time_sub</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#aigeanpy.test_net.test_time_sub" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="aigeanpy.test_net.test_time_sub_value1">
+<span class="sig-prename descclassname"><span class="pre">aigeanpy.test_net.</span></span><span class="sig-name descname"><span class="pre">test_time_sub_value1</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#aigeanpy.test_net.test_time_sub_value1" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="aigeanpy.test_net.test_time_sub_value2">
+<span class="sig-prename descclassname"><span class="pre">aigeanpy.test_net.</span></span><span class="sig-name descname"><span class="pre">test_time_sub_value2</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#aigeanpy.test_net.test_time_sub_value2" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-aigeanpy.test_satmap">
+<span id="aigeanpy-test-satmap-module"></span><h2>aigeanpy.test_satmap module<a class="headerlink" href="#module-aigeanpy.test_satmap" title="Permalink to this heading">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="aigeanpy.test_satmap.test_add">
+<span class="sig-prename descclassname"><span class="pre">aigeanpy.test_satmap.</span></span><span class="sig-name descname"><span class="pre">test_add</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#aigeanpy.test_satmap.test_add" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="aigeanpy.test_satmap.test_add_date">
+<span class="sig-prename descclassname"><span class="pre">aigeanpy.test_satmap.</span></span><span class="sig-name descname"><span class="pre">test_add_date</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#aigeanpy.test_satmap.test_add_date" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="aigeanpy.test_satmap.test_add_instrument">
+<span class="sig-prename descclassname"><span class="pre">aigeanpy.test_satmap.</span></span><span class="sig-name descname"><span class="pre">test_add_instrument</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#aigeanpy.test_satmap.test_add_instrument" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="aigeanpy.test_satmap.test_add_type">
+<span class="sig-prename descclassname"><span class="pre">aigeanpy.test_satmap.</span></span><span class="sig-name descname"><span class="pre">test_add_type</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#aigeanpy.test_satmap.test_add_type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="aigeanpy.test_satmap.test_cal_centre">
+<span class="sig-prename descclassname"><span class="pre">aigeanpy.test_satmap.</span></span><span class="sig-name descname"><span class="pre">test_cal_centre</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#aigeanpy.test_satmap.test_cal_centre" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="aigeanpy.test_satmap.test_cal_fov">
+<span class="sig-prename descclassname"><span class="pre">aigeanpy.test_satmap.</span></span><span class="sig-name descname"><span class="pre">test_cal_fov</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#aigeanpy.test_satmap.test_cal_fov" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="aigeanpy.test_satmap.test_centre_type">
+<span class="sig-prename descclassname"><span class="pre">aigeanpy.test_satmap.</span></span><span class="sig-name descname"><span class="pre">test_centre_type</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#aigeanpy.test_satmap.test_centre_type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="aigeanpy.test_satmap.test_data_type">
+<span class="sig-prename descclassname"><span class="pre">aigeanpy.test_satmap.</span></span><span class="sig-name descname"><span class="pre">test_data_type</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#aigeanpy.test_satmap.test_data_type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="aigeanpy.test_satmap.test_earth_to_pixel">
+<span class="sig-prename descclassname"><span class="pre">aigeanpy.test_satmap.</span></span><span class="sig-name descname"><span class="pre">test_earth_to_pixel</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#aigeanpy.test_satmap.test_earth_to_pixel" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="aigeanpy.test_satmap.test_earth_to_pixel_value">
+<span class="sig-prename descclassname"><span class="pre">aigeanpy.test_satmap.</span></span><span class="sig-name descname"><span class="pre">test_earth_to_pixel_value</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#aigeanpy.test_satmap.test_earth_to_pixel_value" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="aigeanpy.test_satmap.test_fov_type">
+<span class="sig-prename descclassname"><span class="pre">aigeanpy.test_satmap.</span></span><span class="sig-name descname"><span class="pre">test_fov_type</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#aigeanpy.test_satmap.test_fov_type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="aigeanpy.test_satmap.test_get_satmap_file_type">
+<span class="sig-prename descclassname"><span class="pre">aigeanpy.test_satmap.</span></span><span class="sig-name descname"><span class="pre">test_get_satmap_file_type</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#aigeanpy.test_satmap.test_get_satmap_file_type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="aigeanpy.test_satmap.test_isoverlap">
+<span class="sig-prename descclassname"><span class="pre">aigeanpy.test_satmap.</span></span><span class="sig-name descname"><span class="pre">test_isoverlap</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#aigeanpy.test_satmap.test_isoverlap" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="aigeanpy.test_satmap.test_meta_type">
+<span class="sig-prename descclassname"><span class="pre">aigeanpy.test_satmap.</span></span><span class="sig-name descname"><span class="pre">test_meta_type</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#aigeanpy.test_satmap.test_meta_type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="aigeanpy.test_satmap.test_mosaic">
+<span class="sig-prename descclassname"><span class="pre">aigeanpy.test_satmap.</span></span><span class="sig-name descname"><span class="pre">test_mosaic</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#aigeanpy.test_satmap.test_mosaic" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="aigeanpy.test_satmap.test_mosaic_padding_type">
+<span class="sig-prename descclassname"><span class="pre">aigeanpy.test_satmap.</span></span><span class="sig-name descname"><span class="pre">test_mosaic_padding_type</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#aigeanpy.test_satmap.test_mosaic_padding_type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="aigeanpy.test_satmap.test_mosaic_resolution_type">
+<span class="sig-prename descclassname"><span class="pre">aigeanpy.test_satmap.</span></span><span class="sig-name descname"><span class="pre">test_mosaic_resolution_type</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#aigeanpy.test_satmap.test_mosaic_resolution_type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="aigeanpy.test_satmap.test_mosaic_satmap_type">
+<span class="sig-prename descclassname"><span class="pre">aigeanpy.test_satmap.</span></span><span class="sig-name descname"><span class="pre">test_mosaic_satmap_type</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#aigeanpy.test_satmap.test_mosaic_satmap_type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="aigeanpy.test_satmap.test_non_overlap">
+<span class="sig-prename descclassname"><span class="pre">aigeanpy.test_satmap.</span></span><span class="sig-name descname"><span class="pre">test_non_overlap</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#aigeanpy.test_satmap.test_non_overlap" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="aigeanpy.test_satmap.test_pixel_to_earth">
+<span class="sig-prename descclassname"><span class="pre">aigeanpy.test_satmap.</span></span><span class="sig-name descname"><span class="pre">test_pixel_to_earth</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#aigeanpy.test_satmap.test_pixel_to_earth" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="aigeanpy.test_satmap.test_read_asdf">
+<span class="sig-prename descclassname"><span class="pre">aigeanpy.test_satmap.</span></span><span class="sig-name descname"><span class="pre">test_read_asdf</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#aigeanpy.test_satmap.test_read_asdf" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="aigeanpy.test_satmap.test_read_hdf5">
+<span class="sig-prename descclassname"><span class="pre">aigeanpy.test_satmap.</span></span><span class="sig-name descname"><span class="pre">test_read_hdf5</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#aigeanpy.test_satmap.test_read_hdf5" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="aigeanpy.test_satmap.test_read_zip">
+<span class="sig-prename descclassname"><span class="pre">aigeanpy.test_satmap.</span></span><span class="sig-name descname"><span class="pre">test_read_zip</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#aigeanpy.test_satmap.test_read_zip" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="aigeanpy.test_satmap.test_shape">
+<span class="sig-prename descclassname"><span class="pre">aigeanpy.test_satmap.</span></span><span class="sig-name descname"><span class="pre">test_shape</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#aigeanpy.test_satmap.test_shape" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="aigeanpy.test_satmap.test_sub">
+<span class="sig-prename descclassname"><span class="pre">aigeanpy.test_satmap.</span></span><span class="sig-name descname"><span class="pre">test_sub</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#aigeanpy.test_satmap.test_sub" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="aigeanpy.test_satmap.test_sub_date">
+<span class="sig-prename descclassname"><span class="pre">aigeanpy.test_satmap.</span></span><span class="sig-name descname"><span class="pre">test_sub_date</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#aigeanpy.test_satmap.test_sub_date" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="aigeanpy.test_satmap.test_sub_type">
+<span class="sig-prename descclassname"><span class="pre">aigeanpy.test_satmap.</span></span><span class="sig-name descname"><span class="pre">test_sub_type</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#aigeanpy.test_satmap.test_sub_type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="aigeanpy.test_satmap.test_visualise">
+<span class="sig-prename descclassname"><span class="pre">aigeanpy.test_satmap.</span></span><span class="sig-name descname"><span class="pre">test_visualise</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#aigeanpy.test_satmap.test_visualise" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="aigeanpy.test_satmap.test_visualise_save_type">
+<span class="sig-prename descclassname"><span class="pre">aigeanpy.test_satmap.</span></span><span class="sig-name descname"><span class="pre">test_visualise_save_type</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#aigeanpy.test_satmap.test_visualise_save_type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="aigeanpy.test_satmap.test_visualise_savepath_type">
+<span class="sig-prename descclassname"><span class="pre">aigeanpy.test_satmap.</span></span><span class="sig-name descname"><span class="pre">test_visualise_savepath_type</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#aigeanpy.test_satmap.test_visualise_savepath_type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-aigeanpy">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-aigeanpy" title="Permalink to this heading">¶</a></h2>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">aigeanpy-Working-Group-11</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2023, Fuyi Huang, Raj, Zhenghao Lu, Viola Yang, Yixiao Chen.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 6.0.0b2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../_sources/source/aigeanpy.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
